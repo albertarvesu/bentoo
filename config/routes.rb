@@ -1,5 +1,10 @@
 Beento::Application.routes.draw do
+
   get "home/index"
+
+  match 'login' => 'home#login', :as => :login
+  match 'logout' => 'home#logout', :as => :logout
+  match 'callback' => 'home#callback', :as => :callback
 
   root :to => 'home#index'
 
