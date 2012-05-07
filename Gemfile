@@ -4,12 +4,14 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.3'
 gem "mongo_mapper"
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 
 gem 'json'
 gem 'koala'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -23,6 +25,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'mongrel'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -37,4 +40,4 @@ gem 'jquery-rails'
 # gem 'capistrano'
 
 # To use debugger
-# gem 'ruby-debug'
+gem 'ruby-debug'

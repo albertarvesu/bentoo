@@ -17,6 +17,11 @@ end
 
 module Beento
   class Application < Rails::Application
+
+    FACEBOOK_APP_ID = '412264092137162'
+    FACEBOOK_APP_SECRET = 'fb62f109a097778043ae3419c3453a0b'
+    FACEBOOK_SITE_URL = 'http://localhost:3000'
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
