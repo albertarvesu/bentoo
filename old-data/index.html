@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Bootstrap</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<!-- Le styles -->
+		<link href="css/bootstrap.css" rel="stylesheet">
+		<style>
+			body {
+				padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+			}
+		</style>
+		<link href="css/bootstrap-responsive.css" rel="stylesheet">
+
+		<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+		<!--[if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+
+		<link rel="shortcut icon" href="ico/favicon.ico">
+
+	</head>
+
+	<body>
+
+		<div class="navbar navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</a>
+					<a class="brand" href="starter-template.html#">Project name</a>
+					<div class="nav-collapse">
+						<ul class="nav">
+							<li class="active"><a href="starter-template.html#">Home</a></li>
+							<li><a href="starter-template.html#about">About</a></li>
+							<li><a href="starter-template.html#contact">Contact</a></li>
+						</ul>
+						<form action="" class="navbar-search pull-left">
+							<input type="text" placeholder="Search" class="search-query span2">
+						</form>
+						<p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>
+					</div>
+				</div>
+			</div>
+		</div> <!-- end navbar -->
+
+		<div class="container">
+
+			<h1>Bootstrap starter template</h1>
+			<p>Use this document as a way to quick start any new project.<br> All you get is this message and a barebones HTML document.</p>
+
+			<strong>Buttons</strong>
+			<i>These are <em>buttons</em>.</i>
+			<div class="row">
+				<div class="span12">
+					<input class="btn btn-inverse" type="button"value="Cancel">
+					<input class="btn" type="submit"value="Submit">
+				</div>
+			</div>
+
+			<!-- Blockquotes -->
+			<strong>Blockquotes</strong>
+			<div class="row">
+				<div class="span12">
+					<blockquote>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis.</p>
+						<small>Someone famous</small>
+					</blockquote>
+				</div>
+			</div>
+
+			<!-- Alerts -->
+			<strong>Alerts</strong>
+			<div class="alert">
+				<a class="close" data-dismiss="alert">×</a>
+				<strong>Warning!</strong> Best check yo self, you're not looking too good.
+			</div>
+			<div class="alert alert-success">
+				<a class="close" data-dismiss="alert">×</a>
+				<strong>Warning!</strong> Best check yo self, you're not looking too good.
+			</div>
+
+			<div class="progress progress-striped active">
+				<div class="bar"></div>
+			</div>
+
+			<input type="text" data-provide="typeahead" id="typeahead">
+
+
+			<a class="btn" data-toggle="modal" href="#myModal" >Launch Modal</a>
+			<div class="modal" id="myModal">
+				<div class="modal-header">
+					<a class="close" data-dismiss="modal">×</a>
+					<h3>Modal header</h3>
+				</div>
+				<div class="modal-body">
+					<p>One fine body…</p>
+				</div>
+				<div class="modal-footer">
+					<a href="#" class="btn">Close</a>
+					<a href="#" class="btn btn-primary">Save changes</a>
+				</div>
+			</div>
+
+		</div> <!-- end container -->
+
+		<script src="js/jquery-1.7.2.min.js"></script>
+		<script src="js/bootstrap.js"></script>
+		<script type="text/javascript">
+			$("#typeahead").typeahead({
+				source: ["Yahoo", "Google", "MyCube", "Facebook"],
+				items: 2
+			});
+			
+			$('#myModal').modal({
+				keyboard: false
+			});
+		</script>
+
+	</body>
+</html>
