@@ -7,6 +7,8 @@ class HomeController < ApplicationController
 
   def index
     if session['access_token']
+      @graph = Koala::Facebook::GraphAPI.new(session['access_token'])
+      @profile = @graph.get_object('me')
       render "home"
     else
       render "index"
