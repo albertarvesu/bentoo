@@ -3,7 +3,7 @@ class Facebook
 
   key :user_id, String, :required => true
 
-  key :name, String
+  key :name, String, :required => true
   key :first_name, String
   key :middle_name, String
   key :last_name, String
@@ -16,7 +16,8 @@ class Facebook
   key :locale, String
 
   key :picture, String
-  key :birthday
+  key :birthday, Date
+
   timestamps!
 
   belongs_to :user
