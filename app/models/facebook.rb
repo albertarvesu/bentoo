@@ -1,5 +1,5 @@
 class Facebook
-  include MongoMapper::Document
+  include MongoMapper::EmbeddedDocument
 
   key :user_id, String, :required => true
 
@@ -20,6 +20,6 @@ class Facebook
 
   timestamps!
 
-  belongs_to :user
+  embedded_in :user
 
 end

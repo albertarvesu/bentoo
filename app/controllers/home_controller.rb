@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   def index
     if session['access_token']
       @graph = Koala::Facebook::API.new(session['access_token'])
-      @profile = @graph.get_object('me')
+      @facebook = session['current_user'].facebook
       render "home"
     else
       render "index"
@@ -22,8 +22,23 @@ class HomeController < ApplicationController
   end
 
   def callback
+
     session['access_token'] = session['oauth'].get_access_token(params[:code])
+
+    @graph = Koala::Facebook::API.new(session['access_token'])
+    @me = @graph.get_object("me")
+
+    #check if facebook record exist for this user
+    @user = User.where("facebook._id" => @me['id']).first
+    if @user.nil?
+      @user = User.new
+      @user.facebook = Facebook.new(@me)
+      @user.save
+    end
+
+    session['current_user'] = @user
     redirect_to '/'
+
   end
 
 end
