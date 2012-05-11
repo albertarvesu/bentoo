@@ -1,13 +1,8 @@
 class HomeController < ApplicationController
 
-  FACEBOOK_APP_ID = '412264092137162'
-  FACEBOOK_APP_SECRET = 'fb62f109a097778043ae3419c3453a0b'
-  FACEBOOK_SITE_URL = 'http://localhost:3000/'
-  FACEBOOK_PERMISSIONS = 'publish_stream,user_status,friends_status,user_hometown,friends_hometown,user_location,friends_location'
-
   def index
     if session['access_token']
-      @graph = Koala::Facebook::GraphAPI.new(session['access_token'])
+      @graph = Koala::Facebook::API.new(session['access_token'])
       @profile = @graph.get_object('me')
       render "home"
     else
@@ -16,8 +11,8 @@ class HomeController < ApplicationController
   end
 
   def login
-    session['oauth'] = Koala::Facebook::OAuth.new(FACEBOOK_APP_ID, FACEBOOK_APP_SECRET, FACEBOOK_SITE_URL + '/callback')
-    redirect_to session['oauth'].url_for_oauth_code(:permissions => FACEBOOK_PERMISSIONS)
+    session['oauth'] = Koala::Facebook::OAuth.new(FB_APP_ID, FB_APP_SECRET, FB_SITE_URL + '/callback')
+    redirect_to session['oauth'].url_for_oauth_code(:permissions => FB_PERMISSIONS)
   end
 
   def logout
