@@ -22,9 +22,7 @@ class HomeController < ApplicationController
   end
 
   def callback
-
     session['access_token'] = session['oauth'].get_access_token(params[:code])
-
     @graph = Koala::Facebook::API.new(session['access_token'])
     @me = @graph.get_object("me")
 
@@ -35,10 +33,14 @@ class HomeController < ApplicationController
       @user.facebook = Facebook.new(@me)
       @user.save
     end
-
     session['current_user'] = @user
     redirect_to '/'
+  end
 
+  def about
+  end
+
+  def contact
   end
 
 end

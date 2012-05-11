@@ -5,6 +5,11 @@ Beento::Application.routes.draw do
   match 'login' => 'home#login', :as => :login
   match 'logout' => 'home#logout', :as => :logout
   match 'callback' => 'home#callback', :as => :callback
+  match 'about' => 'home#about', :as => :about
+  match 'contact' => 'home#contact', :as => :contact
+
+
+  #match 'profile' => 'user#profile', :as => :profile
 
   root :to => 'home#index'
 
