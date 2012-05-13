@@ -1,13 +1,18 @@
 class Place
   include MongoMapper::Document
 
-  key :name, String, :required => true
+  key :name
 
-  key :location, String
-  key :country, String, :required => true
+  key :street
+  key :city
+  key :country
+  key :zip
 
-  key :latitude, String
-  key :longitude, String
+  key :latitude
+  key :longitude
+
+  key :message
+  key :network
 
   key :review_ids, Array
   many :reviews, :in => :review_ids

@@ -8,6 +8,7 @@ Beento::Application.routes.draw do
   match 'about' => 'home#about', :as => :about
   match 'contact' => 'home#contact', :as => :contact
 
+  match 'sync/:network' => 'place#sync'
 
   #match 'profile' => 'user#profile', :as => :profile
 

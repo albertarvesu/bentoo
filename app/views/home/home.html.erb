@@ -1,6 +1,5 @@
 <% 
 app_name = Rails.application.class.parent_name
-print @facebook.inspect
 %>
 
 <div class="navbar navbar-fixed-top">
@@ -41,11 +40,10 @@ print @facebook.inspect
           <span class="nav-header pull-right"><%= @facebook['name'] %></span>
       </div><!--/.well -->
     </div><!--/span-->
+
     <div class="span9">
       <div class="hero-unit">
-        <h1>Hello, world!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+      <a href="/sync/facebook" class="btn btn-primary btn-large">Sync Facebook Checkins</a></p>
       </div>
       <div class="row-fluid">
         <div class="span4">

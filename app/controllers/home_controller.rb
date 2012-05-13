@@ -1,9 +1,11 @@
 class HomeController < ApplicationController
 
+  before_filter :current_user
+
   def index
     if session['access_token']
       @graph = Koala::Facebook::API.new(session['access_token'])
-      @facebook = session['current_user'].facebook
+      @facebook = current_user.facebook
       render "home"
     else
       render "index"
@@ -18,10 +20,12 @@ class HomeController < ApplicationController
   def logout
     session['oauth'] = nil
     session['access_token'] = nil
+    session['user_id'] = nil
     redirect_to '/'
   end
 
   def callback
+
     session['access_token'] = session['oauth'].get_access_token(params[:code])
     @graph = Koala::Facebook::API.new(session['access_token'])
     @me = @graph.get_object("me")
@@ -33,7 +37,7 @@ class HomeController < ApplicationController
       @user.facebook = Facebook.new(@me)
       @user.save
     end
-    session['current_user'] = @user
+    session['user_id'] = @user['_id']
     redirect_to '/'
   end
 
@@ -41,6 +45,16 @@ class HomeController < ApplicationController
   end
 
   def contact
+  end
+
+
+
+
+
+  protected
+
+  def current_user
+    User.find(session['user_id']) 
   end
 
 end
