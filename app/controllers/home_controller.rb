@@ -21,7 +21,7 @@ class HomeController < ApplicationController
     session['oauth'] = nil
     session['access_token'] = nil
     session['user_id'] = nil
-    redirect_to '/'
+    redirect_to root_path
   end
 
   def callback
@@ -38,7 +38,7 @@ class HomeController < ApplicationController
       @user.save
     end
     session['user_id'] = @user['_id']
-    redirect_to '/'
+    redirect_to root_path
   end
 
   def about
