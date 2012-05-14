@@ -2,6 +2,7 @@ Beento::Application.routes.draw do
 
   get "home/index"
 
+
   match 'login' => 'home#login', :as => :login
   match 'logout' => 'home#logout', :as => :logout
   match 'callback' => 'home#callback', :as => :callback
@@ -11,6 +12,7 @@ Beento::Application.routes.draw do
   match 'sync/:network' => 'place#sync'
 
   #match 'profile' => 'user#profile', :as => :profile
+  match 'user/places/:id' => 'user#places', :as => :places
 
   root :to => 'home#index'
 
