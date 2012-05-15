@@ -31,7 +31,7 @@ class PlaceController < ApplicationController
       :country => @location['country'],
       :zip => @location['zip'],
       :latitude => @location['latitude'],
-      :longitude => @location['street'],
+      :longitude => @location['longitude'],
       :message => checkin['message'],
       :network => network
     }
