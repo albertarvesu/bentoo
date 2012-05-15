@@ -47,10 +47,6 @@ class HomeController < ApplicationController
   def contact
   end
 
-
-
-
-
   protected
 
   def current_user
