@@ -16,4 +16,13 @@ class User
     save
   end
 
+  def checkins(network)
+    places.select { |place| place.network === network }
+  end
+
+  def clear_checkins(network)
+    places.delete_if { |place| place.network === network }
+    save
+  end
+
 end

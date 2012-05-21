@@ -1,0 +1,4 @@
+http://groups.google.com/group/mongomapper/browse_thread/thread/350db3465c5573a4
+
+Ruby Arrays
+http://corelib.rubyonrails.org/classes/Array.html
